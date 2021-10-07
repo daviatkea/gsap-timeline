@@ -1,0 +1,41 @@
+header,
+footer {
+  display: grid;
+  place-content: center;
+  color: #fff;
+  block-size: clamp(50vh, 50vw, 70vh);
+  background: darkorchid;
+}
+
+section {
+  padding: 3rem;
+}
+
+h2 {
+  margin-bottom: 1.2rem;
+  margin-top: 4rem;
+  font-size: 4rem;
+  line-height: 1.125;
+  inline-size: min(50vw, 15ch);
+}
+
+p {
+  font-size: 1.5rem;
+  inline-size: min(50vw, 50ch);
+  line-height: 1.5;
+  margin: revert;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  font-family: system-ui, sans-serif;
+}
