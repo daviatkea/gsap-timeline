@@ -1,0 +1,32 @@
+Fremgangsmåde:
+
+1. Lav en variabel, der henviser til alle sections
+    - const sections = document.querySelectorAll('section')
+
+
+2. Brug forEach() til at loope henover dem
+    - sections.forEach( section => {
+    })
+
+3. Inde i forEach()-loopet skal vi lave en henvisning til h2 samt alle p'er
+        - const h2s = document.querySelector('h2')
+        - const ps = document.querySelectorAll('p')
+
+4. Herefter skal vi lave en animation for hhv. h2'eren og p'erne i en timeline:
+
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: section,
+            start: "",
+            end: "",
+            scrub: true
+        }
+    })
+    .from(h2s, {
+        opacity: 0,
+    })
+    .from(ps, {
+        opacity: 0,
+        y: 100,
+        stagger: 0.3
+    })
