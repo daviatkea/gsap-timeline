@@ -9,24 +9,24 @@ Fremgangsmåde:
     })
 
 3. Inde i forEach()-loopet skal vi lave en henvisning til h2 samt alle p'er
-        - const h2s = document.querySelector('h2')
-        - const ps = document.querySelectorAll('p')
+        - const h2 = section.querySelector('h2')
+        - const ps = section.querySelectorAll('p')
 
-4. Herefter skal vi lave en animation for hhv. h2'eren og p'erne i en timeline:
+4. Herefter skal vi lave en animation for hhv. h2'eren og p'erne i en timeline, som udløses a vores section-element:
 
     gsap.timeline({
         scrollTrigger: {
             trigger: section,
-            start: "",
-            end: "",
-            scrub: true
+            start: "top 50%", // Animationen sættes igang, når toppen a section-elementet rammer 50% ind i viewporten
+            end: "+=200px", // Animationen er slut, når man har scrollet 200px ned
+            scrub: true // Animationen bindes op på scrollbaren
         }
     })
-    .from(h2s, {
+    .from(h2, {
         opacity: 0,
     })
     .from(ps, {
         opacity: 0,
         y: 100,
-        stagger: 0.3
+        stagger: 0.5
     })
